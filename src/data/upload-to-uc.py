@@ -1,4 +1,8 @@
 # Databricks notebook source
+
+
+# COMMAND ----------
+
 import pandas as pd
 df = pd.read_csv('diabetic_data.csv')
 # df = df.replace(['?'],None)
@@ -6,6 +10,22 @@ df = pd.read_csv('diabetic_data.csv')
 # COMMAND ----------
 
 sdf = spark.createDataFrame(df)
+
+# COMMAND ----------
+
+display(sdf)
+
+# COMMAND ----------
+
+dbutils.data.summarize(sdf)
+
+# COMMAND ----------
+
+display(sdf.summary())
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
